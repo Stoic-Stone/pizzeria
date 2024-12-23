@@ -40,6 +40,18 @@
 			<div  class="collapse navbar-collapse" id="ftco-nav">
 				<ul class="navbar-nav ml-auto">
 					<li class="nav-item active"><a href="#" class="nav-link">Home</a></li>
+					<li class="nav-item ">
+					@auth
+					<a href="{{url('/showcart',Auth::user()->id)}}" class="nav-link">
+					Cart {{$count}}
+					</a>
+					@endauth
+                    <a href="{{url('/login')}}" class="nav-link">
+					@guest
+                     Cart[0]
+					 </a>
+					@endguest
+					</li>
 					@if (Route::has('login'))
                                 @auth
                                     <li>

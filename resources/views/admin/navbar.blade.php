@@ -1,14 +1,14 @@
 <div class="deznav">
 <div class="deznav-scroll">
 				<ul class="metismenu" id="menu">
-                    <li><a  href="{{url('/rusers')}}" aria-expanded="false">
+                    <li><a  href="{{url('/orders')}}" aria-expanded="false">
 							<i class="flaticon-381-networking"></i>
-                            Reservations
+                            Orders
 						</a>
                     </li>
-                    <li><a  href="javascript:void()" aria-expanded="false">
+                    <li><a  href="{{url('/suppliers')}}" aria-expanded="false">
 							<i class="flaticon-381-controls-3"></i>
-							Chefs
+							Supplier
 						</a>
                     </li>
                     <li><a  href="{{url('/users')}}" aria-expanded="false">

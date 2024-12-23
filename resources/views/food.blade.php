@@ -21,6 +21,7 @@
     <div class="container-wrap">
         <div class="row no-gutters d-flex">
             @foreach($data as $food)  
+            
             <div class="col-lg-4 d-flex ftco-animate">
                 <div class="services-wrap d-flex">
                     <a href="#" class="img" style="background-image: url({{ asset('foodimage/'.$food->image) }});"></a>
@@ -29,7 +30,11 @@
                         <p>{{ $food->description }}</p>
                         <p class="price">
                             <span>${{ number_format($food->price, 2) }}</span>
-                            <a href="#" class="ml-2 btn btn-white btn-outline-white">Order</a>
+                            <form action="{{url('/addcart',$food->id)}}" method="POST">
+                            @csrf
+                            <input type="submit" value="add cart" class="ml-2 btn btn-white btn-outline-white">
+                            <input type="number" name="quantity" min="1" value="1" style="width: 80px;">
+                            </form>
                         </p>
                     </div>
                 </div>
